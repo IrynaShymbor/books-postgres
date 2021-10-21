@@ -414,7 +414,7 @@ I will use [faker gem](https://github.com/faker-ruby/faker).
 bundle add faker
 ```
 
-Add code in the seeds file to create entries in existing tables.
+Add code in the seeds file to create entries in existing tables. Note that in Rails, we don't need to require the gem.
 
 ```rb
 # db/seeds.rb
