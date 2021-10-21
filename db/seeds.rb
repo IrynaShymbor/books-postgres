@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+categories = ['Biography', 'Adventure', 'Classics', 'Fantasy', 'Detective and Mistery', 'Horror', 'Historical Fiction', 'Romance']
+
+if Category.count == 0
+  categories.each do |category|
+    Category.create(name: category)
+    puts "created #{category} category"
+  end
+end
+
+3.times do
+  Author.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+end
+
+puts "created authors"
+
+
+(1..Category.count).each do |n|
+  if n > 2
+    category_ids = [n / 2, n]
+  else
+    category_ids = [1, 3, 7]
+  end
+  
+  Book.create(title: Faker::Book.title, author_id: rand(1..3), category_ids: category_ids)
+
+  puts "book #{n} created"
+end
