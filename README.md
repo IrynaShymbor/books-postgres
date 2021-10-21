@@ -329,7 +329,7 @@ As mentioned previously, a book can have many categories, and a category can hav
 
 We want to set many-to-many relationship between the books table and the categories table. We need a join table for that. This additional table will act as a 3rd party, and it will have entries linking categories IDs to books IDs. 
 
-Let's generate the model. We can call it AuthorsBook or BooksAuthor: by convention we combine both models names and pluralize the first one. 
+Let's generate the model. We can call it CategoriesBook or BooksCategory: by convention we combine both models names and pluralize the first one. 
 
 Normally it doesn't matter whether we capitalize the model name when we run the generate command. But in this case we need to either capitalize both Categories and Book, or insert an underscore between them: categories_book, when we run the following command:
 
